@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "NBA Conference Rankings (2010-2024)",
   "width": 800,
   "height": 500,
   "data": {

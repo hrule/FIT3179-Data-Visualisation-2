@@ -56,7 +56,7 @@ body {
 
 /* Chart container styling */
 .viz-container {
-  height: 400px;      /* fixed height */
+  height: 300px;      /* fixed height */
   border: 1px solid #ccc;
   position: relative;
 }

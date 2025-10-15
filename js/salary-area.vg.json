@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 950,
   "height": 450,
-  "title": "NBA Team Salaries per Conference Over Time (Stacked Area Chart)",
   "data": { "url": "data/team_salaries.csv" },
   "transform": [
     { "calculate": "toNumber(datum.Salary)", "as": "Salary" }
