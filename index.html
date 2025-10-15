@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    
+    
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  </head>
+  <body>
+    <div id="main">
+      <!-- Header with NBA logo and title -->
+      <div class="header">
+        <img src="data/images/nba-logo.png" alt="NBA Logo">
+        <h1>Trades</h1>
+      </div>
+
+      <!-- Three-column charts -->
+      <div class="chart-row">
+        <!-- First column -->
+        <div class="chart-column">
+          <p>NBA Trades per Team per Season</p>
+          <div class="viz-container" id="trade-map"></div>
+        </div>
+
+        <!-- Second column -->
+        <div class="chart-column">
+          <p>NBA Team Salaries per Conference per Season</p>
+          <div class="viz-container" id="salary-area"></div>
+        </div>
+
+        <!-- Third column -->
+        <div class="chart-column">
+          <p>NBA Team Conference Rank Bump Chart</p>
+          <div class="viz-container" id="team-conf-rank"></div>
+        </div>
+      </div>
+    </div>
+
+  <script type="text/javascript">
+    function embedChart(id, specPath) {
+      const container = document.getElementById(id);
+      vegaEmbed('#' + id, specPath, {
+        actions: false,
+        renderer: 'svg',
+        width: container.clientWidth,
+        height: container.clientHeight,
+        autosize: { type: "fit", contains: "padding" }
+      }).then(function(result){
+        // result.view for programmatic interaction
+      }).catch(console.error);
+    }
+
+    embedChart('trade-map', 'js/trade-map.vg.json');
+    embedChart('salary-area', 'js/salary-area.vg.json');
+    embedChart('team-conf-rank', 'js/team-conf-rank.vg.json');
+  </script>
+  </body>
+</html>

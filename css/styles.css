@@ -1,0 +1,69 @@
+/* Reset default body spacing */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Main wrapper */
+#main {
+  background-color: #E1D8D3; /* previously body background */
+  min-height: 100vh;
+  font-family: "Times New Roman", Times, serif; /* newspaper-like font */
+}
+
+/* Header with image and title */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.header img {
+  height: 60px; /* adjust as needed */
+  width: auto;
+}
+
+.header h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 48px;
+  margin: 0;
+}
+
+/* Container for all three columns */
+.chart-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Each column takes equal width */
+.chart-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px; /* 10px space on left and right inside each column */
+}
+
+/* Filler text above chart */
+.chart-column p {
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Chart container styling */
+.viz-container {
+  height: 400px;      /* fixed height */
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+/* Ensure Vega embeds fill the container */
+.viz-container > iframe,
+.viz-container > svg {
+  width: 100% !important;
+  height: 100% !important;
+}

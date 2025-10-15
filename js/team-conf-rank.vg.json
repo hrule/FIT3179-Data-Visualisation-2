@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "NBA Conference Rankings (2010-2024)",
+  "width": 800,
+  "height": 500,
+  "data": {
+    "url": "data/team_history.csv"
+  },
+  "transform": [
+    {"filter": "datum.Conference == conferenceSelect"}
+  ],
+  "params": [
+    {
+      "name": "conferenceSelect",
+      "value": "East",
+      "bind": {
+        "input": "select",
+        "options": ["East", "West"],
+        "labels": ["Eastern Conference", "Western Conference"],
+        "name": "Conference: "
+      }
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "YEAR",
+      "type": "ordinal",
+      "title": "Season"
+    },
+    "y": {
+      "field": "CONF_RANK",
+      "type": "quantitative",
+      "title": "Conference Rank (Lower = Better)",
+      "sort": "ascending",
+      "scale": {"reverse": true}
+    },
+    "color": {
+      "field": "TEAM_NAME",
+      "type": "nominal",
+      "title": "Team"
+    },
+    "tooltip": [
+      {"field": "TEAM_NAME", "title": "Team"},
+      {"field": "YEAR", "title": "Season"},
+      {"field": "CONF_RANK", "title": "Rank"}
+    ]
+  }
+}
