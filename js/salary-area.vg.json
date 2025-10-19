@@ -68,7 +68,6 @@
   ],
   "config": {
     "view": { "stroke": "transparent" },
-    "axis": { "labelFontSize": 12, "titleFontSize": 14 },
-    "title": { "fontSize": 18, "anchor": "start" }
+    "axis": { "labelFontSize": 12, "titleFontSize": 14 }
   }
 }
