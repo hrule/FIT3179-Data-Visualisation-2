@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 552,
-  "height": 300,
+  "width": "container",
+  "height": "container",
   "data": {
-    "url": "data/team_history.csv"
+    "url": "../data/team_history.csv"
   },
   "params": [
     {
