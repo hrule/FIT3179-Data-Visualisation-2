@@ -10,7 +10,7 @@
   ],
   "layer": [
     {
-      "data": {"url": "data/top5_salaries_2025.csv"},
+      "data": {"url": "../data/top5_salaries_2025.csv"},
       "transform": [
         {"filter": "datum.Conference == conferenceSelect"}
       ],
